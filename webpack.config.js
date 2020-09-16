@@ -1,8 +1,8 @@
 const path = require('path');
 module.exports = {
-  entry: path.join(__dirname, "js/main"),
+  entry: path.join(__dirname, 'webpack/entry'),
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'assets/javascripts'),
     filename: "bundle.js"
   },
   mode: 'development', // TODO: 'production'
@@ -23,15 +23,5 @@ module.exports = {
         }
       },
     ]
-  },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
-    }
-  },
-  devtool: 'source-map',
-  devServer: {
-    port: 8000,
-    publicPath: '/build/'
-  },
+  }
 }

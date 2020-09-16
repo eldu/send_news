@@ -1,9 +1,13 @@
 .idea
 .sass-cache
+assets/bundle.js
 
-###################
-# Node.gitignore  #
-###################
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 # Logs
 logs
 *.log
