@@ -12,7 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Newsbox - Modern Magazine &amp; Newspaper HTML Template</title>
+    <title>Send News</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -213,52 +213,22 @@
                                     </div>
 
                                     <!-- Single News Area -->
+                                    {% for article in site.data.discovery_example_news.results %}
                                     <div class="single-blog-post d-flex flex-wrap style-5 mb-30">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/28.jpg" alt=""></a>
+                                            <a href="{{ article.url }}"><img src="{{ article.main_image_url }}" alt=""></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
-                                            <a href="#" class="post-author">By Michael Smith</a>
-                                            <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus.</p>
+                                            <span class="post-date">{{ article.publication_date | date: "%B %-d,  %Y"}}</span>
+                                            <a href="{{ article.url }}" class="post-title">{{ article.title }}</a>
+                                            <a href="{{ article.host }}" class="post-author">{{ article.host }}</a>
+                                            <p>{{ article.text }}</p>
                                         </div>
                                     </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="single-blog-post d-flex flex-wrap style-5 mb-30">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/29.jpg" alt=""></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Romantic retreats: 11 resorts worth crossing the Pacific for</a>
-                                            <a href="#" class="post-author">By Michael Smith</a>
-                                            <p>Lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis.</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="single-blog-post d-flex flex-wrap style-5 mb-30">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/30.jpg" alt=""></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Europe will hit US products with tariffs starting Friday</a>
-                                            <a href="#" class="post-author">By Michael Smith</a>
-                                            <p>Lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis.</p>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>

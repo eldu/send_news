@@ -1,6 +1,7 @@
 .idea
 .sass-cache
 assets/bundle.js
+credentials/
 
 # Jekyll
 _site/

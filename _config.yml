@@ -1,0 +1,7 @@
+title: Send News
+author: Ellen Duong
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
